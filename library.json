@@ -1,0 +1,10 @@
+{
+  "name":"CommandParser",
+  "description":"Super simple command-line parser for Arduino",
+  "keywords":"",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/tve/CommandParser.git"
+  },
+}
