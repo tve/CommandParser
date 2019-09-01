@@ -1,6 +1,7 @@
 // Command Parser - Copyright (c)2019 by Thorsten von Eicken - MIT License
 
 #include <string.h>
+#include <functional>
 
 class CommandParser {
 public:
