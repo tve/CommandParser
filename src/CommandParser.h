@@ -23,7 +23,7 @@ public:
         _serial = serial;
     };
 
-    typedef std::function<void(CommandParser *, const char *command)> callback;
+    typedef std::function<void(CommandParser &, const char *command)> callback;
 
     // addCommand registers a callback for a command
     void addCommand(const char *command, callback fun) {

@@ -9,7 +9,7 @@ void CommandParser::parseLine(char *line) {
     while (*line == ' ') line++; // skip leading spaces
     // if empty command, call default handler
     if (!*line) {
-        if (_cbDefault) _cbDefault(this, "");
+        if (_cbDefault) _cbDefault(*this, "");
         return;
     }
     // find end of command = start of args
@@ -20,13 +20,13 @@ void CommandParser::parseLine(char *line) {
     while (cbl) {
         if (strcmp(line, cbl->name) == 0) {
             //printf("Dispatch for %s to 0x%08x\n", cbl->name, (uint32_t)cbl);
-            cbl->fun(this, line);
+            cbl->fun(*this, line);
             return;
         }
         cbl = cbl->next;
     }
     // oops, need to call default handler
-    if (_cbDefault) _cbDefault(this, line);
+    if (_cbDefault) _cbDefault(*this, line);
 }
 
 char *CommandParser::getArg(void) {
